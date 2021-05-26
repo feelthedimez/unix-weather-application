@@ -1,12 +1,30 @@
 const { default: axios } = require("axios")
 
-const fetchTemperature = async (city) => {
+async function fetchTemperature(city) {
+
+    const config = {
+        method: 'get',
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=011f9ade363009c9133ac05f4226b4f7`
+    }
+
     try {
-        const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=011f9ade363009c9133ac05f4226b4f7`);
-        console.log(res.data.main.temp);
+        let res = await axios(config);
+        // console.log(res.data.main.temp);
+        return res.data.main.temp;
     } catch (e) {
-        console.log("There was an error: \n", e);
+        console.log("The was an error \n", e);
     }
 }
 
-fetchTemperature("Johannesburg");
+const temperature = fetchTemperature("Durban");
+
+temperature
+    .then(
+        (result) => {
+            console.log("Temperature: " + result);
+        })
+    .catch(
+        (err) => {
+            console.log("There was an error.", err)
+        }
+    )
