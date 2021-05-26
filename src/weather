@@ -7,7 +7,7 @@ const temperature = dateAndTemp.fetchTemperature("Johannesburg");
 temperature
     .then(
     (result) => {
-        console.log("Today's Temperature is: " + result + "°C");
+        console.log("Today's Temperature is " + result + "°C");
     })
     .catch(
         (err) => {
