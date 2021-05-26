@@ -20,6 +20,6 @@ temperature
         })
     .catch(
         (err) => {
-            console.log("There was an error.", err.response.data.message)
+            console.log("There was an error. \n", err.response.data.message)
         }
     )
