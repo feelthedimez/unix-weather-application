@@ -10,7 +10,14 @@ weatherTemp = (city) => {
 }
 
 printOutTemp = (city) => {
-    city = city.toString().toUpperCase();
+    try {
+        city = city.toString().toUpperCase();
+    } catch (err) {
+        if (!city) {
+            console.log("Please enter a city name to continue.")
+        }
+    }
+
     let temperature = dateAndTemp.fetchTemperature(city);
     weatherTemp(city);
 
@@ -26,4 +33,8 @@ printOutTemp = (city) => {
         )
 }
 
-printOutTemp(argumentCity);
+if (!argumentCity) {
+    console.log("No city argument supplied. Please type \'weather city\'")
+} else {
+    printOutTemp(argumentCity);
+}
