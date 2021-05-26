@@ -2,13 +2,15 @@
 
 const dateAndTemp = require('./app')
 
+const argumentCity = process.argv.slice(2)[0];
+
 weatherTemp = (city) => {
-    let message = `City: ${city}\n\nThis a BASH based weather application.\nPlease run weather yourCity to check your temperature.\n\n`;
+    let message = `City: ${city}`;
     console.log(message)
 }
 
-
 printOutTemp = (city) => {
+    city = city.toString().toUpperCase();
     let temperature = dateAndTemp.fetchTemperature(city);
     weatherTemp(city);
 
@@ -24,4 +26,4 @@ printOutTemp = (city) => {
         )
 }
 
-printOutTemp("Johannesburg");
+printOutTemp(argumentCity);
