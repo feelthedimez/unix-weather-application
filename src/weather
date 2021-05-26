@@ -2,16 +2,26 @@
 
 const dateAndTemp = require('./app')
 
-const temperature = dateAndTemp.fetchTemperature("Johannesburg");
+weatherTemp = (city) => {
+    let message = `City: ${city}\n\nThis a BASH based weather application.\nPlease run weather yourCity to check your temperature.\n\n`;
+    console.log(message)
+}
 
-temperature
-    .then(
-    (result) => {
-        console.log("Today's Temperature is " + result + "°C");
-    })
-    .catch(
-        (err) => {
-            console.log("There was an error.\n", err.response.data.message);
-        }
-    )
 
+printOutTemp = (city) => {
+    let temperature = dateAndTemp.fetchTemperature(city);
+    weatherTemp(city);
+
+    temperature
+        .then(
+            (result) => {
+                console.log("Today's Temperature is " + result + "°C");
+            })
+        .catch(
+            (err) => {
+                console.log("There was an error.\n", err.response.data.message);
+            }
+        )
+}
+
+printOutTemp("Johannesburg");
