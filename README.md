@@ -3,7 +3,8 @@
 Using the Open Weather API, I have built a very basic terminal based weather application. I did this just to get some little knowledge on `axios`, `nodejs`, `await` and `async` keywords from `node.js`.
 
 ### System Requirements
-- Linux/MacOS with `bashrc` terminal working.
+- Linux/MacOS with `~/.bashrc` terminal working.
+- Having node in your system.
 
 ### Running the program
 
