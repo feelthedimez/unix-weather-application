@@ -27,7 +27,7 @@ chmod +x ~/unix-weather-application/src/weather
 echo "export PATH=\"\$HOME/unix-weather-application/src:\$PATH\"" >> ~/.bashrc
 ```
 
-- Create an API Key from [Open Weather API](https://openweathermap.org)
+- Create an API Key from [Open Weather API](https://openweathermap.org) - its a 29 digits
 
 1. Create a profile
 2. Request for an API Key
